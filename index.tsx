@@ -260,7 +260,7 @@ export default definePlugin({
       const mbJson = await mbRes.json();
       const releases = mbJson.releases || [];
 
-      let releaseGroup = releases[0]["release-group"].id;
+      let releaseGroup = releases.length? releases[0]["release-group"].id : "Unknown release group";
       let caaJson = {};
       let url = "";
       let images = [];
